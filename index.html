@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ciodrawz</title>
+  <title>My Site</title>
   <style>
     html, body {
       margin: 0;
@@ -24,13 +24,13 @@
       z-index: 1;
     }
 
-    /* Overlay button container in the middle */
+    /* Button overlay at bottom center */
     .overlay-button {
       position: fixed;
-      top: 60%;       /* Slightly below center */
-      left: 50%;      /* Center horizontally */
-      transform: translate(-50%, -50%); /* Center the button perfectly */
-      z-index: 2;     /* Above iframe */
+      bottom: 40px;        /* Distance from bottom */
+      left: 50%;           /* Center horizontally */
+      transform: translateX(-50%); /* Center perfectly */
+      z-index: 2;          /* Above iframe */
     }
 
     /* Button style */
@@ -60,7 +60,7 @@
 
   <!-- Button overlay -->
   <div class="overlay-button">
-    <a href="work.html">My Work</a>
+    <a href="/art">Checkout My Work</a>
   </div>
 
 </body>
