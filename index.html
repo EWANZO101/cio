@@ -1,33 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ciodrawz</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center; /* horizontal center */
-      align-items: center;     /* vertical center */
-      background-color: #f4f4f4;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cioda's Commissions - Split Page</title>
+<link href="https://fonts.googleapis.com/css2?display=swap&family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Averia Sans Libre', sans-serif;
+  }
 
-    iframe {
-      width: 50%;    /* 50% of page width */
-      height: 80%;   /* 80% of page height */
-      border: 2px solid #ccc;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-  </style>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* Top iframe */
+  #top-iframe {
+    flex: 1 1 50%;
+    width: 100%;
+    border: none;
+  }
+
+  /* Bottom content */
+  #bottom-content {
+    flex: 1 1 50%;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #1a1535;
+    color: #fff;
+  }
+
+  /* Bottom content styles (simplified from your original) */
+  h1, h2, h3, p {
+    margin: 10px 0;
+  }
+
+  hr {
+    border: 0;
+    border-top: dashed 2px #FC9A3F;
+    margin: 20px 0;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px 0;
+  }
+
+  .buttons a {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid #FC9A3F;
+    color: #FFBA61;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.25s ease;
+  }
+
+  .buttons a:hover {
+    background-color: rgba(252,154,63,0.1);
+  }
+
+  .icons {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  .icons a i {
+    color: #FC9A3F;
+    font-size: 1.2em;
+  }
+
+  .icons a:hover i {
+    color: #FFBA61;
+  }
+
+  .image {
+    margin: 15px 0;
+  }
+
+  .image img {
+    max-width: 150px;
+    border-radius: 8px;
+    transition: transform 0.25s ease;
+  }
+
+  .image img:hover {
+    transform: scale(1.05);
+  }
+</style>
 </head>
 <body>
 
-  <iframe src="https://ciodrawz.carrd.co/" title="Carrd Site"></iframe>
+  <!-- Top Iframe -->
+  <iframe id="top-iframe" src="ciodrawz-page.html" title="Cioda's Commissions"></iframe>
 
+  <!-- Bottom Content -->
+  <div id="bottom-content">
+
+    <h1>Cioda's Commissions</h1>
+    <p>Commission Status: Closed</p>
+    <hr>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <a href="#tos" class="button">T.O.S</a>
+      <a href="#comms" class="button">Commissions</a>
+      <a href="https://docs.google.com/document/d/1e3PwxF3JsZDLBaIykz7_rHicjKI0kMUu-rrVpCj0BbM/edit?usp=sharing" target="_blank">Prices</a>
+      <a href="https://trello.com/b/zWUuKny1/ciodas-queue" target="_blank">Queue</a>
+    </div>
+
+    <!-- Icons -->
+    <div class="icons">
+      <a href="https://www.instagram.com/Cio.drawz" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://toyhou.se/CiodaDrawZ" target="_blank"><i class="fas fa-home"></i></a>
+      <a href="https://artfight.net/~Cio_drawz" target="_blank"><i class="fas fa-paint-brush"></i></a>
+      <a href="https://cash.app/$Cioda" target="_blank"><i class="fas fa-dollar-sign"></i></a>
+    </div>
+
+    <!-- Important Note -->
+    <div class="image">
+      <img src="https://via.placeholder.com/150x150/8b5a2b/ffffff?text=Avatar" alt="Cioda Character">
+    </div>
+
+    <h2>!! Important !!</h2>
+    <p>• Please read the T.O.S before considering to commission me.<br>
+       • As of now, I only accept payment through CashApp OR robux gift cards.<br>
+       • Contact me via Instagram or Discord (totallynotcioda) for questions or commission discussion!</p>
+
+    <!-- T.O.S Section -->
+    <section id="tos-section">
+      <h2>★ T.O.S ★</h2>
+      <p>• Artwork is for personal use only (unless discussed otherwise) and must be credited if you decide to use it.<br>
+         • Half of the payment is taken after the sketch (Only applies to orders $20+) and rest after completion.<br>
+         • Refunds are not accepted after the sketch is shown.<br>
+         • Finished commissions will be posted unless specifically asked not to.<br>
+         • I may decline/cancel requests if unable or uncomfortable.<br>
+         • Turnaround is 2-4 weeks depending on schedule.<br>
+         • Finished artwork will be sent via Google Drive for best quality.<br>
+         • Payment plans available for $60+ commissions.</p>
+    </section>
+
+    <!-- Commissions Section -->
+    <section id="comms-section">
+      <h2>Headshot - $20</h2>
+      <div class="image"><img src="https://via.placeholder.com/150x150/4a0b03/ffffff?text=Example+1" alt="Commission Example 1"></div>
+      <div class="image"><img src="https://via.placeholder.com/150x150/4a0b03/ffffff?text=Example+2" alt="Commission Example 2"></div>
+    </section>
+
+    <footer>
+      <p><a href="https://carrd.co/build?ref=auto" style="color:#D36538;text-decoration:none;">Made with Carrd</a></p>
+    </footer>
+
+  </div>
+
+  <script>
+    // Section navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('a[href^="#"]');
+      const sections = document.querySelectorAll('section');
+
+      function showSection(id) {
+        sections.forEach(s => s.style.display = 'none');
+        const target = document.getElementById(id);
+        if(target) target.style.display = 'block';
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const href = this.getAttribute('href').replace('#','') + '-section';
+          showSection(href);
+        });
+      });
+
+      // default hide all sections except first
+      sections.forEach(s => s.style.display = 'none');
+    });
+  </script>
 </body>
 </html>
