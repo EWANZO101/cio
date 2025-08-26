@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Site</title>
+  <title>ciodrawz</title>
   <style>
     html, body {
       margin: 0;
@@ -24,22 +24,24 @@
       z-index: 1;
     }
 
-    /* Overlay button container */
+    /* Overlay button container in the middle */
     .overlay-button {
-      position: fixed;       /* Stays on top */
-      top: 20px;             /* Distance from top */
-      right: 20px;           /* Distance from right */
-      z-index: 2;            /* Above iframe */
+      position: fixed;
+      top: 60%;       /* Slightly below center */
+      left: 50%;      /* Center horizontally */
+      transform: translate(-50%, -50%); /* Center the button perfectly */
+      z-index: 2;     /* Above iframe */
     }
 
     /* Button style */
     .overlay-button a {
       display: inline-block;
-      padding: 12px 24px;
+      padding: 14px 28px;
       background-color: #ff5e5e;
       color: white;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       transition: transform 0.2s, box-shadow 0.2s;
