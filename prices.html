@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cio.Drawz - Commission Prices</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+        }
+        .star-decoration {
+            color: #f59e0b;
+            animation: twinkle 2s infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .price-card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            transition: all 0.3s ease;
+        }
+        .price-card:hover {
+            border-color: #f59e0b;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
+        }
+        .price-header {
+            background: linear-gradient(45deg, #f59e0b, #d97706);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .back-button {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: rgba(245, 158, 11, 0.2);
+            border-color: #f59e0b;
+            transform: translateY(-1px);
+        }
+        .highlight-box {
+            background: linear-gradient(45deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.1));
+            border-left: 4px solid #f59e0b;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Back Button -->
+    <div class="container mx-auto px-4 py-4 max-w-2xl">
+        <a href="index.html" class="back-button inline-flex items-center px-4 py-2 rounded-lg text-amber-400 hover:text-white transition-colors">
+            <i class="fas fa-arrow-left mr-2"></i>
+            Back to Profile
+        </a>
+    </div>
+
+    <div class="container mx-auto px-4 pb-8 max-w-2xl">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="mb-2">
+                <span class="star-decoration text-lg mr-2">✨</span>
+                <span class="star-decoration text-sm">⭐</span>
+                <span class="star-decoration text-lg ml-1 mr-2">✨</span>
+            </div>
+            
+            <h1 class="text-3xl font-bold price-header mb-2">Cioda's Commission Prices</h1>
+            
+            <div class="mb-6">
+                <span class="star-decoration text-sm mr-1">⭐</span>
+                <span class="star-decoration text-lg mx-1">✨</span>
+                <span class="star-decoration text-lg mx-1">⭐</span>
+            </div>
+        </div>
+
+        <!-- Basic Art Commissions -->
+        <div class="space-y-6 mb-8">
+            <!-- Sketch -->
+            <div class="price-card rounded-xl p-6">
+                <h3 class="text-xl font-bold text-amber-400 mb-4 flex items-center">
+                    <i class="fas fa-pencil mr-2"></i>
+                    Sketch
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-300">
+                    <div class="text-center p-3 bg-slate-800/50 rounded-lg">
+                        <div class="text-amber-400 font-semibold">Headshot</div>
+                        <div class="text-2xl font-bold text-white">$5</div>
+                    </div>
+                    <div class="text-center p-3 bg-slate-800/50 rounded-lg">
+                        <div class="text-amber-400 font-semibold">Halfbody</div>
+                        <div class="text-2xl font-bold text-white">$10</div>
+                    </div>
+                    <div class="text-center p-3 bg-slate-800/50 rounded-lg">
+                        <div class="text-amber-400 font-semibold">Fullbody</div>
+                        <div class="text-2xl font-bold text-white">$15</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flat Color -->
+            <div class="price-card rounded-xl p-6">
+                <h3 class="text-xl font-bold text-amber-400 mb-4 flex items-center">
+                    <i class="fas fa-fill-drip mr-2"></i>
+                    Flat Color
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-300">
+                    <div class="text-center p-3 bg-slate-800/50 rounded-lg">
+                        <div class="text-amber-400 font-semibold">Headshot</div>
+                        <div class="text-2xl font-bold text-white">$15</div>
+                    </div>
+                    <div class="text-center p-3 bg-slate-800/50 rounded-lg">
+                        <div class="text-amber-400 font-semibold">Halfbody</div>
+                        <div class="text-2xl font-bold text-white">$20</div>
+                    </div>
+                    <div class="text-center p-3 bg-slate-800/50 rounded-lg">
+                        <div class="text-amber-400 font-semibold">Fullbody</div>
+                        <div class="text-2xl font-bold text-white">$35</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Color -->
+            <div class="price-card rounded-xl p-6">
+                <h3 class="text-xl font-bold text-amber-400 mb-4 flex items-center">
+                    <i class="fas fa-palette mr-2"></i>
+                    Full Color
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-300">
+                    <div class="text-center p-3 bg-slate-800/50 rounded-lg">
+                        <div class="text-amber-400 font-semibold">Headshot</div>
+                        <div class="text-2xl font-bold text-white">$20</div>
+                    </div>
+                    <div class="text-center p-3 bg-slate-800/50 rounded-lg">
+                        <div class="text-amber-400 font-semibold">Halfbody</div>
+                        <div class="text-2xl font-bold text-white">$30</div>
+                    </div>
+                    <div class="text-center p-3 bg-slate-800/50 rounded-lg">
+                        <div class="text-amber-400 font-semibold">Fullbody</div>
+                        <div class="text-2xl font-bold text-white">$40</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Important Note -->
+        <div class="highlight-box p-4 rounded-lg mb-6">
+            <p class="text-amber-300 font-semibold flex items-center">
+                <i class="fas fa-users mr-2"></i>
+                Additional characters are +55% of the original price
+            </p>
+        </div>
+
+        <!-- Doodle Pages -->
+        <div class="price-card rounded-xl p-6 mb-6">
+            <h3 class="text-xl font-bold text-amber-400 mb-4 flex items-center">
+                <i class="fas fa-file-image mr-2"></i>
+                Doodle Page
+            </h3>
+            <p class="text-gray-400 mb-4 italic">Both options come with minimal shading</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="text-center p-4 bg-slate-800/50 rounded-lg">
+                    <div class="text-amber-400 font-semibold mb-2">Sketchy Doodle Page</div>
+                    <div class="text-2xl font-bold text-white">$35</div>
+                </div>
+                <div class="text-center p-4 bg-slate-800/50 rounded-lg">
+                    <div class="text-amber-400 font-semibold mb-2">Clean Doodle Page</div>
+                    <div class="text-2xl font-bold text-white">$40</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reference Sheets -->
+        <div class="space-y-6 mb-6">
+            <!-- Detailed Reference Sheet -->
+            <div class="price-card rounded-xl p-6">
+                <h3 class="text-xl font-bold text-amber-400 mb-4 flex items-center">
+                    <i class="fas fa-clipboard-list mr-2"></i>
+                    Detailed Reference Sheet
+                    <span class="ml-auto text-2xl font-bold text-white">$60</span>
+                </h3>
+                <div class="text-gray-300">
+                    <p class="mb-2 font-semibold text-amber-300">Detailed reference sheets include:</p>
+                    <ul class="space-y-1 ml-4">
+                        <li class="flex items-center"><i class="fas fa-check text-amber-400 mr-2 text-sm"></i>Front view (fullbody)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-amber-400 mr-2 text-sm"></i>Back view</li>
+                        <li class="flex items-center"><i class="fas fa-check text-amber-400 mr-2 text-sm"></i>Regular headshot & 2 character personality headshots</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Simple Reference Sheet -->
+            <div class="price-card rounded-xl p-6">
+                <h3 class="text-xl font-bold text-amber-400 mb-4 flex items-center">
+                    <i class="fas fa-clipboard mr-2"></i>
+                    Simple Reference Sheet
+                    <span class="ml-auto text-2xl font-bold text-white">$45</span>
+                </h3>
+                <div class="text-gray-300">
+                    <p class="mb-2 font-semibold text-amber-300">Simple reference sheets include:</p>
+                    <ul class="space-y-1 ml-4">
+                        <li class="flex items-center"><i class="fas fa-check text-amber-400 mr-2 text-sm"></i>Front view (fullbody)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-amber-400 mr-2 text-sm"></i>Regular headshot and 1 character personality headshot</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Reference Sheet Extras -->
+            <div class="price-card rounded-xl p-6">
+                <h3 class="text-xl font-bold text-amber-400 mb-4 flex items-center">
+                    <i class="fas fa-plus mr-2"></i>
+                    Reference Sheet Extras
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-slate-800/50 rounded-lg">
+                        <div class="text-amber-400 font-semibold mb-2">Character Outfits</div>
+                        <div class="text-xl font-bold text-white mb-2">$10</div>
+                        <div class="text-sm text-gray-400">Comes with two outfits</div>
+                    </div>
+                    <div class="p-4 bg-slate-800/50 rounded-lg">
+                        <div class="text-amber-400 font-semibold mb-2">Personal Items</div>
+                        <div class="text-xl font-bold text-white mb-2">$6</div>
+                        <div class="text-sm text-gray-400">Comes with 3 items</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Important Note -->
+        <div class="highlight-box p-4 rounded-lg mb-8">
+            <p class="text-amber-300 font-semibold flex items-center">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                Complexity of the character can affect the price
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-gray-400 text-sm">
+            <p>✨ All prices are in USD ✨</p>
+            <p class="mt-1">Contact me through my social links to discuss your commission!</p>
+        </div>
+    </div>
+
+    <!-- Background Stars Animation -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <div class="star-decoration absolute top-10 left-10 text-xs opacity-60">✨</div>
+        <div class="star-decoration absolute top-20 right-16 text-sm opacity-40" style="animation-delay: 0.5s;">⭐</div>
+        <div class="star-decoration absolute top-40 left-20 text-xs opacity-50" style="animation-delay: 1s;">✨</div>
+        <div class="star-decoration absolute bottom-40 right-20 text-sm opacity-30" style="animation-delay: 1.5s;">⭐</div>
+        <div class="star-decoration absolute bottom-20 left-16 text-xs opacity-40" style="animation-delay: 2s;">✨</div>
+        <div class="star-decoration absolute top-32 right-32 text-xs opacity-50" style="animation-delay: 1.2s;">⭐</div>
+        <div class="star-decoration absolute bottom-32 left-32 text-sm opacity-40" style="animation-delay: 1.8s;">✨</div>
+    </div>
+</body>
+</html>
