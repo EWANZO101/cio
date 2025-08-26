@@ -3,65 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Site</title>
+  <title>ciodrawz</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
       font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center; /* horizontal center */
+      align-items: center;     /* vertical center */
+      background-color: #f4f4f4;
     }
 
-    /* Fullscreen iframe */
     iframe {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      z-index: 1;
-    }
-
-    /* Button overlay at bottom center */
-    .overlay-button {
-      position: fixed;
-      bottom: 40px;        /* Distance from bottom */
-      left: 50%;           /* Center horizontally */
-      transform: translateX(-50%); /* Center perfectly */
-      z-index: 2;          /* Above iframe */
-    }
-
-    /* Button style */
-    .overlay-button a {
-      display: inline-block;
-      padding: 14px 28px;
-      background-color: #ff5e5e;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .overlay-button a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+      width: 50%;    /* 50% of page width */
+      height: 80%;   /* 80% of page height */
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
 
-  <!-- Carrd iframe -->
   <iframe src="https://ciodrawz.carrd.co/" title="Carrd Site"></iframe>
-
-  <!-- Button overlay -->
-  <div class="overlay-button">
-    <a href="mywork.html">Checkout My Work</a>
-  </div>
 
 </body>
 </html>
