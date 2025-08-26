@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: EWANZO101/cio   # Replace with your GitHub repo
+  branch: main                  # or your default branch
+
+media_folder: "art"             # Where uploaded images go inside repo
+public_folder: "/art"           # How they are referenced in the site
+
+collections:
+  - name: "gallery"
+    label: "Gallery"
+    folder: "art"
+    create: true
+    slug: "{{slug}}"
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Title", name: "title", widget: "string"}
