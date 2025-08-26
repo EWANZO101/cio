@@ -12,6 +12,7 @@
     padding: 0;
     height: 100%;
     font-family: 'Averia Sans Libre', sans-serif;
+    overflow: hidden;
   }
 
   body {
@@ -25,6 +26,69 @@
     flex: 1 1 50%;
     width: 100%;
     border: none;
+    background: linear-gradient(135deg, #2a1f4a, #1a1535);
+    position: relative;
+  }
+
+  /* Iframe fallback content when page doesn't load */
+  .iframe-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2a1f4a, #1a1535);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .iframe-fallback h1 {
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+    background: linear-gradient(45deg, #FC9A3F, #FFBA61);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(252,154,63,0.3);
+  }
+
+  .iframe-fallback .status {
+    font-size: 1.2em;
+    color: #ff6b6b;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .iframe-fallback .avatar {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #8b5a2b, #d4a574);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 0 10px 30px rgba(252,154,63,0.2);
+    margin: 0 auto 20px auto;
+    transition: transform 0.3s ease;
+  }
+
+  .iframe-fallback .avatar:hover {
+    transform: scale(1.05);
+  }
+
+  .iframe-fallback p {
+    color: #ccc;
+    margin: 10px 0;
+    max-width: 500px;
   }
 
   /* Bottom content */
@@ -36,42 +100,49 @@
     color: #fff;
   }
 
-  /* Bottom content styles (simplified from your original) */
-  h1, h2, h3, p {
-    margin: 10px 0;
-  }
-
-  hr {
-    border: 0;
-    border-top: dashed 2px #FC9A3F;
-    margin: 20px 0;
-  }
-
+  /* Navigation */
   .buttons {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin: 10px 0;
+    margin: 20px 0;
+    justify-content: center;
   }
 
   .buttons a {
     padding: 10px 20px;
     background-color: transparent;
-    border: 1px solid #FC9A3F;
+    border: 2px solid #FC9A3F;
     color: #FFBA61;
-    border-radius: 20px;
+    border-radius: 25px;
     text-decoration: none;
-    transition: background-color 0.25s ease;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.9em;
   }
 
-  .buttons a:hover {
-    background-color: rgba(252,154,63,0.1);
+  .buttons a:hover, .buttons a.active {
+    background-color: #FC9A3F;
+    color: #1a1535;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(252,154,63,0.3);
   }
 
+  /* Social Icons */
   .icons {
     display: flex;
-    gap: 10px;
-    margin: 10px 0;
+    gap: 15px;
+    margin: 20px 0;
+    justify-content: center;
+  }
+
+  .icons a {
+    display: inline-block;
+    padding: 8px;
+    background-color: rgba(252,154,63,0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
   }
 
   .icons a i {
@@ -79,85 +150,300 @@
     font-size: 1.2em;
   }
 
-  .icons a:hover i {
-    color: #FFBA61;
+  .icons a:hover {
+    background-color: #FC9A3F;
+    transform: scale(1.1);
   }
 
-  .image {
+  .icons a:hover i {
+    color: #1a1535;
+  }
+
+  /* Content Sections */
+  .content-section {
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+    background-color: rgba(255,255,255,0.02);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid rgba(252,154,63,0.1);
+  }
+
+  .content-section.active {
+    display: block;
+  }
+
+  .content-section h2 {
+    color: #FC9A3F;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .content-section h3 {
+    color: #FFBA61;
+    font-size: 1.2em;
+    margin: 20px 0 10px 0;
+  }
+
+  .content-section p, .content-section li {
+    line-height: 1.5;
+    margin: 8px 0;
+    font-size: 0.95em;
+  }
+
+  .content-section ul {
+    padding-left: 20px;
+  }
+
+  .content-section ul li {
+    margin: 6px 0;
+    list-style: none;
+    position: relative;
+  }
+
+  .content-section ul li:before {
+    content: "★";
+    color: #FC9A3F;
+    position: absolute;
+    left: -20px;
+  }
+
+  /* Commission Examples */
+  .commission-examples {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 15px 0;
   }
 
-  .image img {
-    max-width: 150px;
-    border-radius: 8px;
-    transition: transform 0.25s ease;
+  .example-item {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #4a0b03, #8b5a2b);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    font-size: 0.85em;
+    text-align: center;
   }
 
-  .image img:hover {
+  .example-item:hover {
     transform: scale(1.05);
+  }
+
+  /* Important Notice */
+  .important-notice {
+    background-color: rgba(255,107,107,0.1);
+    border: 2px solid #ff6b6b;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+  }
+
+  .important-notice h3 {
+    color: #ff6b6b;
+    margin-top: 0;
+    font-size: 1.1em;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 1px dashed #FC9A3F;
+  }
+
+  footer a {
+    color: #D36538;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+
+  footer a:hover {
+    color: #FC9A3F;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      flex-direction: column;
+    }
+    
+    #top-iframe {
+      flex: 1 1 40%;
+      min-height: 300px;
+    }
+    
+    #bottom-content {
+      flex: 1 1 60%;
+      padding: 15px;
+    }
+    
+    .buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .buttons a {
+      width: 180px;
+      text-align: center;
+    }
+    
+    .commission-examples {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .iframe-fallback h1 {
+      font-size: 2em;
+    }
+    
+    .iframe-fallback .avatar {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  /* Iframe loading styles */
+  #top-iframe {
+    opacity: 1;
+    transition: opacity 0.3s ease;
   }
 </style>
 </head>
 <body>
 
-  <!-- Top Iframe -->
-  <iframe id="top-iframe" src="ciodrawz-page.html" title="Cioda's Commissions"></iframe>
+  <!-- Top Iframe with Fallback -->
+  <div style="position: relative; flex: 1 1 50%;">
+    <iframe id="top-iframe" src="ciodrawz-page.html" title="Cioda's Commissions" onload="hideFallback()" onerror="showFallback()"></iframe>
+    
+    <!-- Fallback content when iframe fails to load -->
+    <div id="iframe-fallback" class="iframe-fallback">
+      <h1>Cioda's Commissions</h1>
+      <p class="status">Commission Status: Closed</p>
+      <div class="avatar">
+        Cioda's Avatar
+      </div>
+      <p>Welcome to my commission page! The main gallery is loading...</p>
+      <p>Please check the sections below for more information!</p>
+    </div>
+  </div>
 
   <!-- Bottom Content -->
   <div id="bottom-content">
 
-    <h1>Cioda's Commissions</h1>
-    <p>Commission Status: Closed</p>
-    <hr>
-
-    <!-- Buttons -->
+    <!-- Navigation Buttons -->
     <div class="buttons">
-      <a href="#tos" class="button">T.O.S</a>
-      <a href="#comms" class="button">Commissions</a>
+      <a href="#" class="nav-button active" data-section="home">Home</a>
+      <a href="#" class="nav-button" data-section="tos">T.O.S</a>
+      <a href="#" class="nav-button" data-section="commissions">Commissions</a>
       <a href="https://docs.google.com/document/d/1e3PwxF3JsZDLBaIykz7_rHicjKI0kMUu-rrVpCj0BbM/edit?usp=sharing" target="_blank">Prices</a>
       <a href="https://trello.com/b/zWUuKny1/ciodas-queue" target="_blank">Queue</a>
     </div>
 
-    <!-- Icons -->
+    <!-- Social Icons -->
     <div class="icons">
-      <a href="https://www.instagram.com/Cio.drawz" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://toyhou.se/CiodaDrawZ" target="_blank"><i class="fas fa-home"></i></a>
-      <a href="https://artfight.net/~Cio_drawz" target="_blank"><i class="fas fa-paint-brush"></i></a>
-      <a href="https://cash.app/$Cioda" target="_blank"><i class="fas fa-dollar-sign"></i></a>
+      <a href="https://www.instagram.com/Cio.drawz" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://toyhou.se/CiodaDrawZ" target="_blank" title="Toyhouse">
+        <i class="fas fa-home"></i>
+      </a>
+      <a href="https://artfight.net/~Cio_drawz" target="_blank" title="ArtFight">
+        <i class="fas fa-paint-brush"></i>
+      </a>
+      <a href="https://cash.app/$Cioda" target="_blank" title="CashApp">
+        <i class="fas fa-dollar-sign"></i>
+      </a>
     </div>
 
-    <!-- Important Note -->
-    <div class="image">
-      <img src="https://via.placeholder.com/150x150/8b5a2b/ffffff?text=Avatar" alt="Cioda Character">
+    <!-- Home Section -->
+    <div id="home-section" class="content-section active">
+      <div class="important-notice">
+        <h3>!! Important !!</h3>
+        <ul>
+          <li>Please read the T.O.S before considering to commission me.</li>
+          <li>As of now, I only accept payment through CashApp OR robux gift cards.</li>
+          <li>Contact me via Instagram or Discord (totallynotcioda) for questions or commission discussion!</li>
+        </ul>
+      </div>
+      
+      <h2>Welcome!</h2>
+      <p>Thank you for visiting my commission page! I'm an artist who specializes in digital artwork and character commissions.</p>
+      
+      <p>I'm currently <strong style="color: #ff6b6b;">closed for commissions</strong>, but feel free to check out my queue and pricing information. Follow my social media accounts to stay updated!</p>
     </div>
-
-    <h2>!! Important !!</h2>
-    <p>• Please read the T.O.S before considering to commission me.<br>
-       • As of now, I only accept payment through CashApp OR robux gift cards.<br>
-       • Contact me via Instagram or Discord (totallynotcioda) for questions or commission discussion!</p>
 
     <!-- T.O.S Section -->
-    <section id="tos-section">
-      <h2>★ T.O.S ★</h2>
-      <p>• Artwork is for personal use only (unless discussed otherwise) and must be credited if you decide to use it.<br>
-         • Half of the payment is taken after the sketch (Only applies to orders $20+) and rest after completion.<br>
-         • Refunds are not accepted after the sketch is shown.<br>
-         • Finished commissions will be posted unless specifically asked not to.<br>
-         • I may decline/cancel requests if unable or uncomfortable.<br>
-         • Turnaround is 2-4 weeks depending on schedule.<br>
-         • Finished artwork will be sent via Google Drive for best quality.<br>
-         • Payment plans available for $60+ commissions.</p>
-    </section>
+    <div id="tos-section" class="content-section">
+      <h2>★ Terms of Service ★</h2>
+      <ul>
+        <li>Artwork is for personal use only (unless discussed otherwise) and must be credited if you decide to use it.</li>
+        <li>Half of the payment is taken after the sketch (Only applies to orders $20+) and rest after completion.</li>
+        <li>Refunds are not accepted after the sketch is shown.</li>
+        <li>Finished commissions will be posted unless specifically asked not to.</li>
+        <li>I may decline/cancel requests if unable or uncomfortable.</li>
+        <li>Turnaround is 2-4 weeks depending on schedule.</li>
+        <li>Finished artwork will be sent via Google Drive for best quality.</li>
+        <li>Payment plans available for $60+ commissions.</li>
+      </ul>
+      
+      <div class="important-notice">
+        <h3>Payment Information</h3>
+        <p>I only accept payments through:</p>
+        <ul>
+          <li>CashApp ($Cioda)</li>
+          <li>Robux Gift Cards</li>
+        </ul>
+      </div>
+    </div>
 
     <!-- Commissions Section -->
-    <section id="comms-section">
-      <h2>Headshot - $20</h2>
-      <div class="image"><img src="https://via.placeholder.com/150x150/4a0b03/ffffff?text=Example+1" alt="Commission Example 1"></div>
-      <div class="image"><img src="https://via.placeholder.com/150x150/4a0b03/ffffff?text=Example+2" alt="Commission Example 2"></div>
-    </section>
+    <div id="commissions-section" class="content-section">
+      <h2>Commission Types</h2>
+      
+      <h3>Headshots - $20</h3>
+      <p>Detailed character headshots featuring your character from the shoulders up.</p>
+      
+      <div class="commission-examples">
+        <div class="example-item">
+          <span>Example 1<br>Headshot</span>
+        </div>
+        <div class="example-item">
+          <span>Example 2<br>Headshot</span>
+        </div>
+      </div>
+      
+      <div class="important-notice">
+        <h3>Commission Process</h3>
+        <ul>
+          <li>Contact me via Instagram or Discord</li>
+          <li>Provide character references and details</li>
+          <li>I'll send a sketch for approval</li>
+          <li>Payment is split: 50% after sketch, 50% on completion</li>
+          <li>Final artwork delivered via Google Drive</li>
+        </ul>
+      </div>
+    </div>
 
+    <!-- Footer -->
     <footer>
-      <p><a href="https://carrd.co/build?ref=auto" style="color:#D36538;text-decoration:none;">Made with Carrd</a></p>
+      <p><a href="https://carrd.co/build?ref=auto">Made with Carrd</a></p>
     </footer>
 
   </div>
@@ -165,26 +451,66 @@
   <script>
     // Section navigation
     document.addEventListener('DOMContentLoaded', function() {
-      const links = document.querySelectorAll('a[href^="#"]');
-      const sections = document.querySelectorAll('section');
+      const navButtons = document.querySelectorAll('.nav-button');
+      const sections = document.querySelectorAll('.content-section');
 
-      function showSection(id) {
-        sections.forEach(s => s.style.display = 'none');
-        const target = document.getElementById(id);
-        if(target) target.style.display = 'block';
+      function showSection(targetId) {
+        // Hide all sections
+        sections.forEach(section => {
+          section.classList.remove('active');
+        });
+        
+        // Remove active class from all buttons
+        navButtons.forEach(button => {
+          button.classList.remove('active');
+        });
+        
+        // Show target section
+        const targetSection = document.getElementById(targetId + '-section');
+        if (targetSection) {
+          targetSection.classList.add('active');
+        }
       }
 
-      links.forEach(link => {
-        link.addEventListener('click', function(e) {
+      navButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
           e.preventDefault();
-          const href = this.getAttribute('href').replace('#','') + '-section';
-          showSection(href);
+          const targetSection = this.getAttribute('data-section');
+          showSection(targetSection);
+          this.classList.add('active');
         });
       });
-
-      // default hide all sections except first
-      sections.forEach(s => s.style.display = 'none');
     });
+
+    // Iframe fallback handling
+    function hideFallback() {
+      const fallback = document.getElementById('iframe-fallback');
+      if (fallback) {
+        fallback.style.display = 'none';
+      }
+    }
+
+    function showFallback() {
+      const fallback = document.getElementById('iframe-fallback');
+      if (fallback) {
+        fallback.style.display = 'flex';
+      }
+    }
+
+    // Check if iframe loaded after a delay
+    setTimeout(function() {
+      const iframe = document.getElementById('top-iframe');
+      try {
+        // If iframe is accessible, hide fallback
+        if (iframe.contentDocument || iframe.contentWindow.document) {
+          hideFallback();
+        }
+      } catch (e) {
+        // If iframe is not accessible, show fallback
+        showFallback();
+      }
+    }, 2000);
   </script>
+
 </body>
 </html>
