@@ -1,194 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cio.Drawz - Artist Portfolio & Links</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- 
-    ✨ CUSTOMIZATION GUIDE ✨
-    
-    To customize your links, update the href attributes below:
-    - Commission prices: Add your commission price sheet link
-    - Commission form: Add your commission form link  
-    - Cara: https://cara.app/ciosui/all (already set!)
-    - Human art account: Add your human art platform link
-    - Art Fight: Add your Art Fight profile link
-    - Toyhouse: Add your Toyhouse profile link
-    - X (Twitter): Add your Twitter/X profile link
-    - Instagram: Add your Instagram link to the social icons
-    - Email: Add your email to the envelope icon
-    
-    To use your profile image:
-    1. Save your profile image as "profile-image.jpg" in the same folder
-    2. Or update the src="./profile-image.jpg" with your image URL
-    -->
-    
-    <style>
-        body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-        }
-        .star-decoration {
-            color: #f59e0b;
-            animation: twinkle 2s infinite;
-        }
-        @keyframes twinkle {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        .gradient-border {
-            background: linear-gradient(45deg, #f59e0b, #d97706);
-            padding: 2px;
-            border-radius: 12px;
-        }
-        .link-button {
-            background: rgba(30, 41, 59, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            transition: all 0.3s ease;
-        }
-        .link-button:hover {
-            background: rgba(245, 158, 11, 0.1);
-            border-color: #f59e0b;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.2);
-        }
-        .profile-avatar {
-            background: conic-gradient(from 0deg, #f59e0b, #d97706, #b45309, #f59e0b);
-            padding: 4px;
-            border-radius: 50%;
-        }
-        .social-icon {
-            background: rgba(245, 158, 11, 0.1);
-            border: 2px solid rgba(245, 158, 11, 0.3);
-            transition: all 0.3s ease;
-        }
-        .social-icon:hover {
-            background: rgba(245, 158, 11, 0.2);
-            border-color: #f59e0b;
-            transform: scale(1.1);
-        }
-        .commission-badge {
-            background: linear-gradient(45deg, #dc2626, #b91c1c);
-            animation: pulse 2s infinite;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
 </head>
-<body class="font-sans">
-    <div class="container mx-auto px-4 py-8 max-w-md">
-        <!-- Profile Header -->
-        <div class="text-center mb-8">
-            <!-- Profile Avatar -->
-            <div class="profile-avatar inline-block mb-4">
-                <img src="https://i.ibb.co/B5m171q5/preview.webp" 
-                     alt="Cio.Drawz Profile" 
-                     class="w-28 h-28 rounded-full object-cover">
-            </div>
-            
-            <!-- Name with Stars -->
-            <div class="mb-2">
-                <span class="star-decoration text-lg mr-2">✨</span>
-                <span class="star-decoration text-sm">⭐</span>
-                <span class="star-decoration text-lg ml-1 mr-2">✨</span>
-            </div>
-            
-            <h1 class="text-2xl font-bold text-amber-400 mb-1">@Cio.Drawz</h1>
-            <p class="text-amber-300 text-sm mb-3">Artist & Character Designer</p>
-            
-            <div class="mb-4">
-                <span class="star-decoration text-sm mr-1">⭐</span>
-                <span class="star-decoration text-lg mx-1">✨</span>
-                <span class="star-decoration text-sm mx-1">🎨</span>
-                <span class="star-decoration text-lg mx-1">✨</span>
-                <span class="star-decoration text-sm ml-1">⭐</span>
-            </div>
-        </div>
-
-        <!-- Commission Status -->
-        <div class="mb-6">
-            <div class="commission-badge text-center py-2 px-4 rounded-lg text-white font-semibold mb-4">
-                <i class="fas fa-ban mr-2"></i>
-                Commissions (CLOSED)
-            </div>
-        </div>
-
-        <!-- Main Links -->
-        <div class="space-y-4 mb-8">
-            <!-- Commission Links -->
-            <a href="prices.html" class="link-button block text-center py-4 px-6 rounded-lg text-amber-400 font-medium hover:text-white transition-colors">
-                <i class="fas fa-dollar-sign mr-2"></i>
-                Commission prices
-            </a>
-            
-            <a href="https://docs.google.com/forms/d/1rVwx8gY_C-Pj-t6Vi8aix7cL4XK8xxleftncsEOLfQA" class="link-button block text-center py-4 px-6 rounded-lg text-amber-400 font-medium hover:text-white transition-colors">
-                <i class="fas fa-file-alt mr-2"></i>
-                Commission form
-            </a>
-            
-            <!-- Social Section -->
-            <div class="text-center text-amber-400 font-semibold mb-4 mt-6">
-                <i class="fas fa-share-nodes mr-2"></i>
-                Socials
-            </div>
-            
-            <a href="https://cara.app/ciosui/all" class="link-button block text-center py-4 px-6 rounded-lg text-amber-400 font-medium hover:text-white transition-colors">
-                <i class="fas fa-palette mr-2"></i>
-                Cara
-            </a>
-            
-            <a href="#human-art" class="link-button block text-center py-4 px-6 rounded-lg text-amber-400 font-medium hover:text-white transition-colors">
-                <i class="fas fa-user-artist mr-2"></i>
-                Human art account
-            </a>
-            
-            <a href="#artfight" class="link-button block text-center py-4 px-6 rounded-lg text-amber-400 font-medium hover:text-white transition-colors">
-                <i class="fas fa-sword mr-2"></i>
-                Art Fight
-            </a>
-            
-            <a href="https://toyhou.se/ciodrawz" class="link-button block text-center py-4 px-6 rounded-lg text-amber-400 font-medium hover:text-white transition-colors">
-                <i class="fas fa-home mr-2"></i>
-                Toyhouse
-            </a>
-            
-            <a href="https://twitter.com/ciodrawz" class="link-button block text-center py-4 px-6 rounded-lg text-amber-400 font-medium hover:text-white transition-colors">
-                <i class="fab fa-x-twitter mr-2"></i>
-                X (formerly Twitter)
-            </a>
-        </div>
-
-        <!-- Social Icons Footer -->
-        <div class="flex justify-center space-x-6 mt-8">
-            <a href="https://www.instagram.com/cioda.arts/?igsh=MWs2a2ZweTJ5ZnJzMA%3D%3D&utm_source=qr" class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-amber-400 hover:text-white transition-colors">
-                <i class="fab fa-instagram text-xl"></i>
-            </a>
-            <a href="https://cash.app/$Cioda" class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-amber-400 hover:text-white transition-colors">
-                <i class="fas fa-dollar-sign text-xl"></i>
-            </a>
-            <a href="mailto:floofy12wonder@gmail.com" class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-amber-400 hover:text-white transition-colors">
-                <i class="fas fa-envelope text-xl"></i>
-            </a>
-        </div>
-
-        <!-- Footer -->
-        <div class="text-center mt-8 text-gray-400 text-sm">
-            <p>✨ Character Designer & Digital Artist ✨</p>
-            <p class="mt-1">Creating magical worlds, one drawing at a time</p>
-        </div>
-    </div>
-
-    <!-- Background Stars Animation -->
-    <div class="fixed inset-0 pointer-events-none overflow-hidden">
-        <div class="star-decoration absolute top-10 left-10 text-xs opacity-60">✨</div>
-        <div class="star-decoration absolute top-20 right-16 text-sm opacity-40" style="animation-delay: 0.5s;">⭐</div>
-        <div class="star-decoration absolute top-40 left-20 text-xs opacity-50" style="animation-delay: 1s;">✨</div>
-        <div class="star-decoration absolute bottom-40 right-20 text-sm opacity-30" style="animation-delay: 1.5s;">⭐</div>
-        <div class="star-decoration absolute bottom-20 left-16 text-xs opacity-40" style="animation-delay: 2s;">✨</div>
-    </div>
+<body>
+  <!-- Replace with your Carrd link -->
+  <iframe src="https://ciodrawz.carrd.co/" title="Carrd Site"></iframe>
 </body>
 </html>
